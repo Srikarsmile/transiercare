@@ -136,7 +136,7 @@ form.addEventListener('submit', (e) => {
       </svg>
       Request Sent!
     `;
-    btn.style.background = '#059669';
+    btn.style.background = '#16a34a';
     btn.style.opacity = '1';
     form.reset();
 
