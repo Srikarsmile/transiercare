@@ -1,11 +1,12 @@
-// ===== Navbar Scroll Effect =====
+// ===== Navbar Scroll =====
 const navbar = document.getElementById('navbar');
+let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
 
-// ===== Mobile Navigation =====
+// ===== Mobile Nav =====
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
@@ -14,7 +15,6 @@ navToggle.addEventListener('click', () => {
   navToggle.classList.toggle('active');
 });
 
-// Close mobile nav on link click
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('active');
@@ -22,92 +22,73 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// ===== Scroll Reveal Animation =====
-const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+// Close menu on outside click
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+    navLinks.classList.remove('active');
+    navToggle.classList.remove('active');
+  }
+});
 
-const revealOnScroll = () => {
-  const triggerPoint = window.innerHeight * 0.85;
+// ===== Scroll Reveal =====
+const scrollElements = document.querySelectorAll('.scroll-in');
 
-  scrollRevealElements.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
-    if (elementTop < triggerPoint) {
-      el.classList.add('visible');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
-};
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
+scrollElements.forEach(el => observer.observe(el));
 
 // ===== Counter Animation =====
-const counters = document.querySelectorAll('.stat-number');
-let countersStarted = false;
+const counters = document.querySelectorAll('.stat-value');
+let countersAnimated = false;
 
-const animateCounters = () => {
-  if (countersStarted) return;
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !countersAnimated) {
+      countersAnimated = true;
+      animateCounters();
+      counterObserver.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
 
-  const statsSection = document.querySelector('.hero-stats');
-  if (!statsSection) return;
+const statsBar = document.querySelector('.stats-bar');
+if (statsBar) counterObserver.observe(statsBar);
 
-  const sectionTop = statsSection.getBoundingClientRect().top;
-  if (sectionTop > window.innerHeight) return;
-
-  countersStarted = true;
-
+function animateCounters() {
   counters.forEach(counter => {
-    const target = parseInt(counter.getAttribute('data-target'));
-    const duration = 2000;
-    const step = target / (duration / 16);
-    let current = 0;
+    const target = parseInt(counter.dataset.target);
+    const duration = 1800;
+    const startTime = performance.now();
 
-    const updateCounter = () => {
-      current += step;
-      if (current < target) {
-        counter.textContent = Math.floor(current);
-        requestAnimationFrame(updateCounter);
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = Math.floor(eased * target);
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
       } else {
         counter.textContent = target;
       }
-    };
-
-    updateCounter();
+    }
+    requestAnimationFrame(update);
   });
-};
+}
 
-window.addEventListener('scroll', animateCounters);
-window.addEventListener('load', animateCounters);
-
-// ===== Contact Form =====
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const btn = contactForm.querySelector('button[type="submit"]');
-  const originalText = btn.textContent;
-
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
-  // Simulate form submission
-  setTimeout(() => {
-    btn.textContent = 'Message Sent!';
-    btn.style.background = '#10b981';
-    contactForm.reset();
-
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 3000);
-  }, 1500);
-});
-
-// ===== Smooth Active Nav Link Highlight =====
+// ===== Active Nav Highlight =====
 const sections = document.querySelectorAll('section[id]');
 
-window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY + 100;
+function updateActiveNav() {
+  const scrollPos = window.scrollY + 120;
 
   sections.forEach(section => {
     const top = section.offsetTop;
@@ -115,12 +96,55 @@ window.addEventListener('scroll', () => {
     const id = section.getAttribute('id');
     const link = document.querySelector(`.nav-links a[href="#${id}"]`);
 
-    if (link) {
+    if (link && !link.classList.contains('nav-cta')) {
       if (scrollPos >= top && scrollPos < top + height) {
+        document.querySelectorAll('.nav-links a.active-link').forEach(a => a.classList.remove('active-link'));
         link.classList.add('active-link');
-      } else {
-        link.classList.remove('active-link');
       }
     }
   });
+}
+
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+// ===== Form Handling =====
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const btn = form.querySelector('button[type="submit"]');
+  const originalHTML = btn.innerHTML;
+
+  btn.innerHTML = `
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation: spin 0.6s linear infinite">
+      <path d="M21 12a9 9 0 11-6.219-8.56"/>
+    </svg>
+    Sending...
+  `;
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+
+  // Add spin animation
+  const style = document.createElement('style');
+  style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+  document.head.appendChild(style);
+
+  setTimeout(() => {
+    btn.innerHTML = `
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+      </svg>
+      Request Sent!
+    `;
+    btn.style.background = '#059669';
+    btn.style.opacity = '1';
+    form.reset();
+
+    setTimeout(() => {
+      btn.innerHTML = originalHTML;
+      btn.style.background = '';
+      btn.disabled = false;
+      style.remove();
+    }, 3000);
+  }, 1500);
 });
