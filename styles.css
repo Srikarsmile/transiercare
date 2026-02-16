@@ -1,22 +1,24 @@
 /* ===== Design Tokens ===== */
 :root {
-  --dark: #1a1a1a;
-  --dark-800: #2a2a2a;
-  --dark-700: #3a3a3a;
-  --text: #4a4a4a;
-  --text-light: #7a7a7a;
-  --text-muted: #aaa;
-  --cream: #faf8f5;
-  --cream-dark: #f0ece6;
+  --dark: #1b2e2a;
+  --dark-800: #243d37;
+  --dark-700: #2d4d45;
+  --text: #3d554e;
+  --text-light: #6b8a82;
+  --text-muted: #8faba3;
+  --cream: #f7f5f0;
+  --cream-dark: #ece8df;
   --white: #ffffff;
-  --accent: #c8a97e;
-  --accent-dark: #b8955e;
-  --accent-light: rgba(200, 169, 126, 0.12);
+  --accent: #d17a5a;
+  --accent-dark: #b8603f;
+  --accent-light: rgba(209, 122, 90, 0.1);
+  --sage: #5a8a7a;
+  --sage-light: rgba(90, 138, 122, 0.08);
   --radius: 16px;
   --radius-sm: 10px;
   --radius-xs: 6px;
-  --shadow: 0 4px 20px rgba(0,0,0,0.06);
-  --shadow-lg: 0 16px 48px rgba(0,0,0,0.1);
+  --shadow: 0 4px 20px rgba(27, 46, 42, 0.06);
+  --shadow-lg: 0 16px 48px rgba(27, 46, 42, 0.1);
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
 }
@@ -55,9 +57,9 @@ h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spac
   display: inline-flex; align-items: center; gap: 10px; justify-content: center;
   padding: 16px 32px; border-radius: 50px; font-weight: 600; font-size: 0.9rem;
   background: var(--accent); color: var(--white); border: none;
-  transition: all 0.3s var(--ease); box-shadow: 0 4px 16px rgba(200, 169, 126, 0.3);
+  transition: all 0.3s var(--ease); box-shadow: 0 4px 16px rgba(209, 122, 90, 0.3);
 }
-.btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200, 169, 126, 0.4); }
+.btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(209, 122, 90, 0.4); }
 
 .btn-glass {
   display: inline-flex; align-items: center; gap: 10px; justify-content: center;
@@ -133,7 +135,7 @@ h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spac
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.75) 100%);
+  background: linear-gradient(180deg, rgba(27,46,42,0.5) 0%, rgba(27,46,42,0.65) 50%, rgba(27,46,42,0.8) 100%);
 }
 .hero-content {
   position: relative; z-index: 1; text-align: center;
@@ -302,7 +304,7 @@ h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spac
 .stories-bg img { width: 100%; height: 100%; object-fit: cover; }
 .stories-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(26,26,26,0.92), rgba(42,42,42,0.88));
+  background: linear-gradient(135deg, rgba(27,46,42,0.93), rgba(36,61,55,0.90));
 }
 .stories .container { position: relative; z-index: 1; }
 
