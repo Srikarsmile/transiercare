@@ -224,21 +224,6 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
 .feature strong { font-size: 0.92rem; display: block; margin-bottom: 2px; color: var(--dark); }
 .feature span { font-size: 0.85rem; color: var(--text-light); }
 
-/* ===== Ribbon (Stats) ===== */
-.ribbon {
-  background: var(--dark); padding: 56px 0;
-}
-.ribbon-inner {
-  max-width: 1200px; margin: 0 auto; padding: 0 32px;
-  display: flex; align-items: center; justify-content: center; gap: 0;
-}
-.ribbon-stat { flex: 1; text-align: center; }
-.ribbon-num {
-  font-size: 2.8rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em;
-}
-.ribbon-suffix { font-size: 1.6rem; font-weight: 700; color: var(--accent); }
-.ribbon-label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
-.ribbon-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
 
 /* ===== Section Intro ===== */
 .section-intro { max-width: 500px; margin-bottom: 56px; }
@@ -337,56 +322,6 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
 .timeline .scroll-in:nth-child(4) { transition-delay: 0.3s; }
 .timeline .scroll-in:nth-child(5) { transition-delay: 0.4s; }
 
-/* ===== Stories / Testimonials ===== */
-.stories {
-  position: relative; padding: 120px 0; overflow: hidden;
-}
-.stories-bg {
-  position: absolute; inset: 0; z-index: 0;
-}
-.stories-bg img { width: 100%; height: 100%; object-fit: cover; }
-.stories-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(15,45,61,0.93), rgba(22,58,79,0.92));
-}
-.stories .container { position: relative; z-index: 1; }
-
-.stories-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start;
-}
-.story-card {
-  background: rgba(255,255,255,0.06); backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius);
-  padding: 32px;
-  transition: transform 0.5s var(--ease-spring), background 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
-  will-change: transform;
-}
-.story-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-.story-card-accent {
-  background: var(--accent) !important; border-color: var(--accent) !important;
-  backdrop-filter: none;
-  transform: scale(1.03);
-}
-.story-card-accent:hover { transform: scale(1.03) translateY(-6px); }
-.story-card-accent blockquote { color: var(--white); }
-.story-card-accent strong { color: var(--white) !important; }
-.story-card-accent span { color: rgba(255,255,255,0.6) !important; }
-
-.story-stars { display: flex; gap: 2px; margin-bottom: 16px; }
-.story-card blockquote {
-  font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 24px;
-  font-style: normal;
-}
-.story-author { display: flex; align-items: center; gap: 12px; }
-.story-author img {
-  width: 44px; height: 44px; border-radius: 50%; object-fit: cover;
-  border: 2px solid rgba(255,255,255,0.15);
-  transition: transform 0.3s var(--ease-spring), border-color 0.3s var(--ease);
-}
-.story-card:hover .story-author img { transform: scale(1.1); border-color: rgba(255,255,255,0.4); }
-.story-card-accent .story-author img { border-color: rgba(255,255,255,0.3); }
-.story-author strong { font-size: 0.88rem; display: block; color: var(--white); }
-.story-author span { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
 
 /* ===== Contact ===== */
 .contact { background: var(--white); }
@@ -506,8 +441,6 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
 .cards-grid .scroll-in:nth-child(6) { transition-delay: 0.30s; }
 .cards-grid .scroll-in:nth-child(7) { transition-delay: 0.36s; }
 
-.stories-grid .scroll-in:nth-child(2) { transition-delay: 0.1s; }
-.stories-grid .scroll-in:nth-child(3) { transition-delay: 0.2s; }
 
 /* ===== Mobile overlay backdrop ===== */
 .nav-overlay {
@@ -526,9 +459,6 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
   .card-large { grid-column: 1 / -1; }
   .timeline { grid-template-columns: repeat(2, 1fr); gap: 40px; }
   .timeline-track { display: none; }
-  .stories-grid { grid-template-columns: repeat(2, 1fr); }
-  .story-card-accent { transform: none; }
-  .story-card-accent:hover { transform: translateY(-6px); }
   .contact-split { grid-template-columns: 1fr; }
   .contact-left { padding: 64px 40px; }
   .contact-right { padding: 64px 40px; }
@@ -582,12 +512,6 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
   .feature strong { font-size: 0.88rem; }
   .feature span { font-size: 0.82rem; }
 
-  .ribbon { padding: 32px 0; }
-  .ribbon-inner { flex-wrap: wrap; gap: 0; padding: 0 16px; }
-  .ribbon-stat { flex: 0 0 50%; padding: 14px 0; }
-  .ribbon-num { font-size: 2rem; }
-  .ribbon-label { font-size: 0.72rem; }
-  .ribbon-divider { display: none; }
 
   .services { padding: 64px 0; }
   .cards-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -606,13 +530,6 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
   .timeline-dot { width: 32px; height: 32px; font-size: 0.8rem; margin: 0 auto 12px; }
   .timeline-img { margin-bottom: 16px; }
 
-  .stories { padding: 64px 0; }
-  .stories-grid { grid-template-columns: 1fr; gap: 14px; }
-  .story-card { padding: 24px 20px; }
-  .story-card-accent { transform: none; }
-  .story-card-accent:hover { transform: translateY(-4px); }
-  .story-card blockquote { font-size: 0.88rem; margin-bottom: 20px; line-height: 1.65; }
-  .story-author img { width: 40px; height: 40px; }
 
   .contact-split { grid-template-columns: 1fr; }
   .contact-left { padding: 40px 16px; }
@@ -666,13 +583,9 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
 
   .contact-trust { flex-direction: column; gap: 10px; }
 
-  .ribbon-stat { flex: 0 0 50%; }
-  .ribbon-num { font-size: 1.8rem; }
 
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 
-  .story-card { padding: 20px 16px; }
-  .story-card blockquote { font-size: 0.85rem; }
 
   .card { padding: 22px 18px; }
   .card-overlay { padding: 22px 18px; }

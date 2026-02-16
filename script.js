@@ -96,45 +96,6 @@ if (heroBg) {
   }, { passive: true });
 }
 
-// ===== Counter Animation =====
-const counters = document.querySelectorAll('.ribbon-num');
-let countersAnimated = false;
-
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !countersAnimated) {
-      countersAnimated = true;
-      animateCounters();
-      counterObserver.disconnect();
-    }
-  });
-}, { threshold: 0.3 });
-
-const ribbon = document.querySelector('.ribbon');
-if (ribbon) counterObserver.observe(ribbon);
-
-function animateCounters() {
-  counters.forEach(counter => {
-    const target = parseInt(counter.dataset.target);
-    const duration = 2000;
-    const startTime = performance.now();
-
-    function update(currentTime) {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Smooth ease-out-expo curve
-      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      counter.textContent = Math.floor(eased * target);
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        counter.textContent = target;
-      }
-    }
-    requestAnimationFrame(update);
-  });
-}
 
 // ===== Form Handling =====
 const form = document.getElementById('contactForm');
