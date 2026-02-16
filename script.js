@@ -1,9 +1,8 @@
 // ===== Navbar Scroll =====
 const navbar = document.getElementById('navbar');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
 // ===== Mobile Nav =====
@@ -22,7 +21,6 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// Close menu on outside click
 document.addEventListener('click', (e) => {
   if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
     navLinks.classList.remove('active');
@@ -45,7 +43,7 @@ const observer = new IntersectionObserver((entries) => {
 scrollElements.forEach(el => observer.observe(el));
 
 // ===== Counter Animation =====
-const counters = document.querySelectorAll('.stat-value');
+const counters = document.querySelectorAll('.ribbon-num');
 let countersAnimated = false;
 
 const counterObserver = new IntersectionObserver((entries) => {
@@ -58,8 +56,8 @@ const counterObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 
-const statsBar = document.querySelector('.stats-bar');
-if (statsBar) counterObserver.observe(statsBar);
+const ribbon = document.querySelector('.ribbon');
+if (ribbon) counterObserver.observe(ribbon);
 
 function animateCounters() {
   counters.forEach(counter => {
@@ -70,7 +68,6 @@ function animateCounters() {
     function update(currentTime) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       counter.textContent = Math.floor(eased * target);
 
@@ -84,29 +81,6 @@ function animateCounters() {
   });
 }
 
-// ===== Active Nav Highlight =====
-const sections = document.querySelectorAll('section[id]');
-
-function updateActiveNav() {
-  const scrollPos = window.scrollY + 120;
-
-  sections.forEach(section => {
-    const top = section.offsetTop;
-    const height = section.offsetHeight;
-    const id = section.getAttribute('id');
-    const link = document.querySelector(`.nav-links a[href="#${id}"]`);
-
-    if (link && !link.classList.contains('nav-cta')) {
-      if (scrollPos >= top && scrollPos < top + height) {
-        document.querySelectorAll('.nav-links a.active-link').forEach(a => a.classList.remove('active-link'));
-        link.classList.add('active-link');
-      }
-    }
-  });
-}
-
-window.addEventListener('scroll', updateActiveNav, { passive: true });
-
 // ===== Form Handling =====
 const form = document.getElementById('contactForm');
 
@@ -116,7 +90,7 @@ form.addEventListener('submit', (e) => {
   const originalHTML = btn.innerHTML;
 
   btn.innerHTML = `
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation: spin 0.6s linear infinite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 0.6s linear infinite">
       <path d="M21 12a9 9 0 11-6.219-8.56"/>
     </svg>
     Sending...
@@ -124,14 +98,13 @@ form.addEventListener('submit', (e) => {
   btn.disabled = true;
   btn.style.opacity = '0.7';
 
-  // Add spin animation
   const style = document.createElement('style');
   style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
   document.head.appendChild(style);
 
   setTimeout(() => {
     btn.innerHTML = `
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
       </svg>
       Request Sent!

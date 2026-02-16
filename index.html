@@ -3,379 +3,303 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TransierCare | Professional Domiciliary Care Services</title>
+  <title>TransierCare | Compassionate Home Care</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container top-bar-inner">
-      <div class="top-bar-left">
-        <a href="tel:07597865846"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> 07597 865846</a>
-        <a href="mailto:transiercareltd@gmail.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> transiercareltd@gmail.com</a>
-      </div>
-      <div class="top-bar-right">
-        <span>CQC Registered &amp; Regulated</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="#" class="logo">
-        <div class="logo-mark">
-          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
-            <rect width="40" height="40" rx="10" fill="#2563eb"/>
+  <!-- Sticky Nav -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="10" fill="currentColor"/>
             <path d="M20 10c-3 0-8 4-8 9s5 11 8 13c3-2 8-8 8-13s-5-9-8-9z" fill="#fff" opacity="0.9"/>
-            <circle cx="20" cy="19" r="3" fill="#2563eb"/>
+            <circle cx="20" cy="19" r="3" fill="currentColor"/>
           </svg>
-        </div>
-        <div class="logo-text">
-          <span class="logo-name">TransierCare</span>
-          <span class="logo-tagline">Domiciliary Services</span>
-        </div>
+        </span>
+        TransierCare
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="active-link">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#journey">How It Works</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
+        <li><a href="#how">Process</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#contact" class="nav-btn">Free Consultation</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ====== STORY BEGINS: Hero ====== -->
+  <!-- ===== HERO: Full-bleed cinematic ===== -->
   <section class="hero" id="home">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <div class="hero-badge animate-in">
-          <span class="badge-dot"></span>
-          Trusted by 500+ families across the UK
-        </div>
-        <h1 class="animate-in d1">Your loved ones deserve care that feels like <em>family</em></h1>
-        <p class="hero-text animate-in d2">We bring professional, compassionate domiciliary care into your home &mdash; so the people you love can live safely, independently, and with real dignity.</p>
-        <div class="hero-actions animate-in d3">
-          <a href="#contact" class="btn btn-primary">
-            Get a Free Care Assessment
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="tel:07597865846" class="btn btn-ghost">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            Call Us Now
-          </a>
-        </div>
-      </div>
-      <div class="hero-visual animate-in d2">
-        <div class="hero-image-grid">
-          <div class="hero-img hero-img-main">
-            <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&h=800&fit=crop&crop=faces" alt="Carer helping elderly woman at home" loading="eager">
-          </div>
-          <div class="hero-img hero-img-small-1">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&crop=faces" alt="Carer and client sharing a warm moment" loading="eager">
-          </div>
-          <div class="hero-img hero-img-small-2">
-            <img src="https://images.unsplash.com/photo-1581579438747-104c53d7fbc4?w=400&h=300&fit=crop&crop=faces" alt="Professional care team member" loading="eager">
-          </div>
-        </div>
-        <div class="hero-float-card">
-          <div class="float-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <div>
-            <strong>CQC Inspected</strong>
-            <span>Quality Assured Care</span>
-          </div>
-        </div>
-      </div>
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1600&h=900&fit=crop&crop=faces&q=80" alt="Compassionate home care">
+      <div class="hero-overlay"></div>
     </div>
-    <!-- Scroll hint -->
-    <div class="scroll-hint animate-in d4">
-      <span>Scroll to learn more</span>
-      <div class="scroll-arrow">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CHAPTER 1: The Problem ====== -->
-  <section class="story-block story-problem">
-    <div class="container">
-      <div class="story-text-center scroll-in">
-        <span class="section-label">The Challenge</span>
-        <h2>Finding the right care for someone you love can feel overwhelming</h2>
-        <p class="story-lead">You want them to stay at home. You want them to be safe. You want someone who genuinely cares. We understand &mdash; because that&rsquo;s exactly why TransierCare exists.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CHAPTER 2: The Solution (About) ====== -->
-  <section class="about" id="about">
-    <div class="container about-grid">
-      <div class="about-image-side scroll-in">
-        <div class="about-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?w=600&h=750&fit=crop&crop=faces" alt="Caring nurse with elderly patient at home" loading="lazy">
-          <div class="about-badge-card">
-            <div class="badge-card-number">10+</div>
-            <div class="badge-card-text">Years delivering<br>trusted care</div>
-          </div>
-        </div>
-      </div>
-      <div class="about-content scroll-in">
-        <span class="section-label">Our Promise</span>
-        <h2>We treat your family like our own</h2>
-        <p class="about-lead">TransierCare is a CQC-registered domiciliary care provider. We don&rsquo;t just deliver care &mdash; we build relationships. Every carer we send into your home is someone we&rsquo;d trust with our own family.</p>
-        <div class="about-values">
-          <div class="value-item">
-            <div class="value-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <div>
-              <strong>CQC Registered &amp; Regulated</strong>
-              <p>Fully inspected and approved to the highest standards.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div>
-              <strong>DBS Checked &amp; Trained</strong>
-              <p>Every carer is vetted, qualified, and continuously upskilled.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </div>
-            <div>
-              <strong>Consistent, Familiar Faces</strong>
-              <p>We match you with the same carers so real bonds can form.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <strong>24/7 On-Call Support</strong>
-              <p>Round-the-clock emergency support for complete peace of mind.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Bar -->
-  <section class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item scroll-in">
-          <span class="stat-value" data-target="500">0</span><span class="stat-plus">+</span>
-          <span class="stat-desc">Families Supported</span>
-        </div>
-        <div class="stat-item scroll-in">
-          <span class="stat-value" data-target="50">0</span><span class="stat-plus">+</span>
-          <span class="stat-desc">Care Professionals</span>
-        </div>
-        <div class="stat-item scroll-in">
-          <span class="stat-value" data-target="10">0</span><span class="stat-plus">+</span>
-          <span class="stat-desc">Years of Experience</span>
-        </div>
-        <div class="stat-item scroll-in">
-          <span class="stat-value" data-target="98">0</span><span class="stat-plus">%</span>
-          <span class="stat-desc">Client Satisfaction</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CHAPTER 3: What We Do (Services) ====== -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-header scroll-in">
-        <span class="section-label">What We Offer</span>
-        <h2>Care that fits around your life, not the other way around</h2>
-        <p>Whether it&rsquo;s a few hours a week or round-the-clock support, we tailor everything to you.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card service-card-featured scroll-in">
-          <img src="https://images.unsplash.com/photo-1576765974004-1fca28a626de?w=600&h=400&fit=crop&crop=faces" alt="Personal care assistance at home" loading="lazy">
-          <div class="service-card-body">
-            <h3>Personal Care</h3>
-            <p>Dignified help with bathing, dressing, grooming, and daily routines &mdash; delivered with patience and respect.</p>
-            <a href="#contact" class="service-link">Enquire now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-        <div class="service-card scroll-in">
-          <div class="service-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>
-          </div>
-          <div class="service-card-body">
-            <h3>Medication Management</h3>
-            <p>Safe prompting and administration to keep health regimens on track.</p>
-            <a href="#contact" class="service-link">Enquire now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-        <div class="service-card scroll-in">
-          <div class="service-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
-          <div class="service-card-body">
-            <h3>Companionship</h3>
-            <p>Meaningful company to combat isolation and brighten every day.</p>
-            <a href="#contact" class="service-link">Enquire now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-        <div class="service-card scroll-in">
-          <div class="service-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <div class="service-card-body">
-            <h3>Live-in Care</h3>
-            <p>Round-the-clock care from a dedicated carer living in your home.</p>
-            <a href="#contact" class="service-link">Enquire now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-        <div class="service-card scroll-in">
-          <div class="service-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-          </div>
-          <div class="service-card-body">
-            <h3>Dementia Care</h3>
-            <p>Specialist support for those living with dementia and cognitive conditions.</p>
-            <a href="#contact" class="service-link">Enquire now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-        <div class="service-card scroll-in">
-          <div class="service-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <div class="service-card-body">
-            <h3>Respite Care</h3>
-            <p>Temporary relief for primary carers when you need a well-earned break.</p>
-            <a href="#contact" class="service-link">Enquire now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CHAPTER 4: The Journey (How It Works) ====== -->
-  <section class="journey" id="journey">
-    <div class="container">
-      <div class="section-header scroll-in">
-        <span class="section-label">Your Journey With Us</span>
-        <h2>From first call to first visit &mdash; we make it simple</h2>
-      </div>
-      <div class="journey-grid">
-        <div class="journey-step scroll-in">
-          <div class="journey-img">
-            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&h=350&fit=crop&crop=faces" alt="Friendly phone consultation" loading="lazy">
-            <div class="journey-number">1</div>
-          </div>
-          <h3>You Reach Out</h3>
-          <p>Call us or fill in the form below. We&rsquo;ll have a friendly, no-pressure chat about what you need.</p>
-        </div>
-        <div class="journey-step scroll-in">
-          <div class="journey-img">
-            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=350&fit=crop&crop=center" alt="Care assessment at home" loading="lazy">
-            <div class="journey-number">2</div>
-          </div>
-          <h3>We Visit &amp; Assess</h3>
-          <p>Our care manager comes to your home for a thorough, free assessment to understand your needs and preferences.</p>
-        </div>
-        <div class="journey-step scroll-in">
-          <div class="journey-img">
-            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=350&fit=crop&crop=center" alt="Creating a personalised care plan" loading="lazy">
-            <div class="journey-number">3</div>
-          </div>
-          <h3>Your Plan, Your Carer</h3>
-          <p>We build a bespoke care plan and match you with a consistent carer who&rsquo;s the right fit.</p>
-        </div>
-        <div class="journey-step scroll-in">
-          <div class="journey-img">
-            <img src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=500&h=350&fit=crop&crop=faces" alt="Carer providing compassionate support at home" loading="lazy">
-            <div class="journey-number">4</div>
-          </div>
-          <h3>Care Begins</h3>
-          <p>Your carer starts visiting, building trust, and providing the support that makes every day better.</p>
-        </div>
-      </div>
-      <div class="journey-cta scroll-in">
-        <p>Ready to take the first step?</p>
-        <a href="#contact" class="btn btn-primary">
-          Start Your Journey
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <div class="hero-content">
+      <p class="hero-label animate-in">CQC Registered &bull; Trusted by 500+ Families</p>
+      <h1 class="animate-in d1">Care that feels<br>like <span class="serif-italic">family</span></h1>
+      <p class="hero-sub animate-in d2">Professional domiciliary care in the comfort of your own home. Because your loved ones deserve warmth, dignity, and genuine compassion.</p>
+      <div class="hero-btns animate-in d3">
+        <a href="#contact" class="btn-accent">
+          Book Free Assessment
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:07597865846" class="btn-glass">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          07597 865846
         </a>
       </div>
+      <div class="hero-scroll animate-in d4">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
     </div>
   </section>
 
-  <!-- ====== CHAPTER 5: Social Proof (Testimonials) ====== -->
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <div class="section-header scroll-in">
-        <span class="section-label">Real Stories</span>
-        <h2>Hear from families just like yours</h2>
-        <p>Don&rsquo;t just take our word for it.</p>
+  <!-- ===== ABOUT: Split panel ===== -->
+  <section class="split-section" id="about">
+    <div class="split-image scroll-in">
+      <img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?w=800&h=1000&fit=crop&crop=faces&q=80" alt="Caring nurse with patient">
+      <div class="split-badge">
+        <span class="badge-number">10+</span>
+        <span class="badge-text">Years of<br>Trusted Care</span>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card scroll-in">
-          <div class="testimonial-stars">
+    </div>
+    <div class="split-content scroll-in">
+      <span class="tag">Who We Are</span>
+      <h2>We don't just provide care.<br>We build <span class="serif-italic">relationships.</span></h2>
+      <p class="split-lead">TransierCare is a CQC-registered domiciliary care provider built on one belief: every person deserves to feel safe, valued, and genuinely cared for in their own home.</p>
+      <div class="features-list">
+        <div class="feature">
+          <div class="feature-dot"></div>
+          <div>
+            <strong>CQC Registered &amp; Regulated</strong>
+            <span>Inspected and approved to the highest national standards</span>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-dot"></div>
+          <div>
+            <strong>DBS Checked &amp; Qualified</strong>
+            <span>Every carer is fully vetted, trained, and continuously upskilled</span>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-dot"></div>
+          <div>
+            <strong>Consistent, Familiar Carers</strong>
+            <span>The same trusted faces so real bonds can form</span>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-dot"></div>
+          <div>
+            <strong>24/7 On-Call Support</strong>
+            <span>Round-the-clock help whenever you need it</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NUMBERS: Horizontal ribbon ===== -->
+  <section class="ribbon">
+    <div class="ribbon-inner">
+      <div class="ribbon-stat scroll-in">
+        <span class="ribbon-num" data-target="500">0</span><span class="ribbon-suffix">+</span>
+        <span class="ribbon-label">Families Supported</span>
+      </div>
+      <div class="ribbon-divider"></div>
+      <div class="ribbon-stat scroll-in">
+        <span class="ribbon-num" data-target="50">0</span><span class="ribbon-suffix">+</span>
+        <span class="ribbon-label">Care Professionals</span>
+      </div>
+      <div class="ribbon-divider"></div>
+      <div class="ribbon-stat scroll-in">
+        <span class="ribbon-num" data-target="98">0</span><span class="ribbon-suffix">%</span>
+        <span class="ribbon-label">Client Satisfaction</span>
+      </div>
+      <div class="ribbon-divider"></div>
+      <div class="ribbon-stat scroll-in">
+        <span class="ribbon-num" data-target="24">0</span><span class="ribbon-suffix">/7</span>
+        <span class="ribbon-label">On-Call Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES: Card masonry ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-intro scroll-in">
+        <span class="tag">Our Services</span>
+        <h2>Tailored care for<br>every <span class="serif-italic">need</span></h2>
+        <p>From a few hours a week to full live-in support, we shape our care around your life.</p>
+      </div>
+      <div class="cards-grid">
+        <!-- Large featured card -->
+        <div class="card card-large scroll-in">
+          <img src="https://images.unsplash.com/photo-1576765974004-1fca28a626de?w=800&h=500&fit=crop&crop=faces&q=80" alt="Personal care at home">
+          <div class="card-overlay">
+            <h3>Personal Care</h3>
+            <p>Dignified support with bathing, dressing, grooming, and daily routines &mdash; always delivered with patience and warmth.</p>
+            <a href="#contact" class="card-link">Enquire &rarr;</a>
+          </div>
+        </div>
+        <!-- Small cards -->
+        <div class="card scroll-in">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>
+          </div>
+          <h3>Medication Management</h3>
+          <p>Safe prompting and administration keeping health on track.</p>
+          <a href="#contact" class="card-link">Enquire &rarr;</a>
+        </div>
+        <div class="card scroll-in">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Companionship</h3>
+          <p>Meaningful company to brighten days and combat isolation.</p>
+          <a href="#contact" class="card-link">Enquire &rarr;</a>
+        </div>
+        <div class="card scroll-in">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Live-in Care</h3>
+          <p>A dedicated carer living in your home for round-the-clock support.</p>
+          <a href="#contact" class="card-link">Enquire &rarr;</a>
+        </div>
+        <div class="card scroll-in">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3>Dementia Care</h3>
+          <p>Specialist support for cognitive conditions with trained professionals.</p>
+          <a href="#contact" class="card-link">Enquire &rarr;</a>
+        </div>
+        <div class="card scroll-in">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Respite Care</h3>
+          <p>Temporary relief for family carers &mdash; take a well-earned break.</p>
+          <a href="#contact" class="card-link">Enquire &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS: Horizontal timeline ===== -->
+  <section class="process" id="how">
+    <div class="container">
+      <div class="section-intro section-intro-center scroll-in">
+        <span class="tag">How It Works</span>
+        <h2>From first call to first visit,<br>in <span class="serif-italic">four simple steps</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-track"></div>
+        <div class="timeline-step scroll-in">
+          <div class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop&crop=faces&q=80" alt="Phone call">
+          </div>
+          <div class="timeline-dot">1</div>
+          <h3>You Reach Out</h3>
+          <p>A friendly, no-pressure conversation about your needs.</p>
+        </div>
+        <div class="timeline-step scroll-in">
+          <div class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop&crop=center&q=80" alt="Home assessment">
+          </div>
+          <div class="timeline-dot">2</div>
+          <h3>Free Home Assessment</h3>
+          <p>We visit your home and understand exactly what&rsquo;s needed.</p>
+        </div>
+        <div class="timeline-step scroll-in">
+          <div class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop&crop=center&q=80" alt="Care plan">
+          </div>
+          <div class="timeline-dot">3</div>
+          <h3>Your Plan, Your Carer</h3>
+          <p>A bespoke plan and a carefully matched, consistent carer.</p>
+        </div>
+        <div class="timeline-step scroll-in">
+          <div class="timeline-img">
+            <img src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=400&h=300&fit=crop&crop=faces&q=80" alt="Care begins">
+          </div>
+          <div class="timeline-dot">4</div>
+          <h3>Care Begins</h3>
+          <p>Your carer arrives, builds trust, and makes every day better.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS: Overlapping cards ===== -->
+  <section class="stories" id="stories">
+    <div class="stories-bg">
+      <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=1600&h=800&fit=crop&q=80" alt="Caring hands">
+      <div class="stories-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="section-intro section-intro-light scroll-in">
+        <span class="tag tag-light">Real Stories</span>
+        <h2>Families who trust us with<br>the people they <span class="serif-italic">love most</span></h2>
+      </div>
+      <div class="stories-grid">
+        <div class="story-card scroll-in">
+          <div class="story-stars">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p>&ldquo;TransierCare has been an absolute lifeline. The carers are genuinely wonderful &mdash; professional, kind, and truly invested in Mum's wellbeing. We couldn&rsquo;t ask for better.&rdquo;</p>
-          <div class="testimonial-footer">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=faces" alt="Sarah T." class="testimonial-photo" loading="lazy">
+          <blockquote>&ldquo;TransierCare has been an absolute lifeline. The carers are genuinely wonderful &mdash; professional, kind, and truly invested in Mum's wellbeing.&rdquo;</blockquote>
+          <div class="story-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=faces&q=80" alt="Sarah T.">
             <div>
               <strong>Sarah T.</strong>
               <span>Daughter of Client, London</span>
             </div>
           </div>
         </div>
-        <div class="testimonial-card featured scroll-in">
-          <div class="testimonial-stars">
+        <div class="story-card story-card-accent scroll-in">
+          <div class="story-stars">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p>&ldquo;I was very nervous about having a carer. But from the very first visit, they put me completely at ease. My carer Jane feels like family now. I genuinely look forward to her visits.&rdquo;</p>
-          <div class="testimonial-footer">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces" alt="James M." class="testimonial-photo" loading="lazy">
+          <blockquote>&ldquo;I was nervous about having a carer. But from the very first visit, they put me completely at ease. My carer Jane feels like family now. I look forward to her visits every single day.&rdquo;</blockquote>
+          <div class="story-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=faces&q=80" alt="James M.">
             <div>
               <strong>James M.</strong>
               <span>Care Recipient, Manchester</span>
             </div>
           </div>
         </div>
-        <div class="testimonial-card scroll-in">
-          <div class="testimonial-stars">
+        <div class="story-card scroll-in">
+          <div class="story-stars">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p>&ldquo;Reliable, compassionate, and always going above and beyond. Dad&rsquo;s quality of life has improved dramatically. The whole family has peace of mind now.&rdquo;</p>
-          <div class="testimonial-footer">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=faces" alt="Rachel A." class="testimonial-photo" loading="lazy">
+          <blockquote>&ldquo;Reliable, compassionate, and always going above and beyond. Dad&rsquo;s quality of life has improved dramatically. The whole family finally has peace of mind.&rdquo;</blockquote>
+          <div class="story-author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&h=96&fit=crop&crop=faces&q=80" alt="Rachel A.">
             <div>
               <strong>Rachel A.</strong>
               <span>Daughter of Client, Birmingham</span>
@@ -386,174 +310,138 @@
     </div>
   </section>
 
-  <!-- ====== CHAPTER 6: The Call to Action ====== -->
-  <section class="cta">
-    <div class="container">
-      <div class="cta-inner scroll-in">
-        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&h=400&fit=crop&crop=faces" alt="Caring hands" class="cta-img" loading="lazy">
-        <div class="cta-content">
-          <h2>Your family&rsquo;s comfort starts with one conversation</h2>
-          <p>Book a free, no-obligation care assessment. We&rsquo;ll visit your home, listen to your needs, and create a plan that works for you.</p>
-          <div class="cta-actions">
-            <a href="#contact" class="btn btn-white">
-              Book Free Assessment
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="tel:07597865846" class="btn btn-outline-white">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              07597 865846
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CHAPTER 7: Contact (The Destination) ====== -->
+  <!-- ===== CONTACT: Dark split ===== -->
   <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info scroll-in">
-          <span class="section-label">Get In Touch</span>
-          <h2>Let&rsquo;s start the conversation</h2>
+    <div class="contact-split">
+      <div class="contact-left">
+        <div class="contact-left-inner scroll-in">
+          <span class="tag tag-light">Get In Touch</span>
+          <h2>Your family&rsquo;s comfort starts with one <span class="serif-italic">conversation</span></h2>
           <p>Whether you&rsquo;re exploring options or ready to begin, we&rsquo;re here. No pressure, no jargon &mdash; just honest advice from people who care.</p>
 
-          <div class="contact-details">
-            <a href="tel:07597865846" class="contact-detail">
-              <div class="contact-detail-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              </div>
+          <div class="contact-links">
+            <a href="tel:07597865846" class="contact-link">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               <div>
-                <strong>Call Us</strong>
-                <p>07597 865846</p>
+                <strong>07597 865846</strong>
+                <span>Call us anytime</span>
               </div>
             </a>
-            <a href="mailto:transiercareltd@gmail.com" class="contact-detail">
-              <div class="contact-detail-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
+            <a href="mailto:transiercareltd@gmail.com" class="contact-link">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               <div>
-                <strong>Email Us</strong>
-                <p>transiercareltd@gmail.com</p>
+                <strong>transiercareltd@gmail.com</strong>
+                <span>We reply within 2 hours</span>
               </div>
             </a>
-            <div class="contact-detail">
-              <div class="contact-detail-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div>
-                <strong>Availability</strong>
-                <p>24/7 On-Call Support</p>
-              </div>
-            </div>
           </div>
 
-          <div class="contact-image scroll-in">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&h=300&fit=crop&crop=faces" alt="Our friendly care team" loading="lazy">
+          <div class="contact-trust">
+            <div class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              CQC Registered
+            </div>
+            <div class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              DBS Checked
+            </div>
+            <div class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              24/7 Support
+            </div>
           </div>
         </div>
-
-        <div class="contact-form-wrap scroll-in">
-          <form class="contact-form" id="contactForm">
-            <h3>Request a free callback</h3>
-            <p>Fill in your details and we&rsquo;ll call you back within 2 hours.</p>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" placeholder="e.g. John Smith" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900 000" required>
-              </div>
+      </div>
+      <div class="contact-right">
+        <form class="contact-form" id="contactForm" autocomplete="on">
+          <h3>Request a free callback</h3>
+          <p>Fill in your details and we&rsquo;ll call you back within 2 hours.</p>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="John Smith" required>
             </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="e.g. john@example.com">
+            <div class="form-field">
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" name="phone" placeholder="07700 900 000" required>
             </div>
-            <div class="form-group">
-              <label for="service">Service Required</label>
-              <select id="service" name="service">
-                <option value="">Select a service...</option>
-                <option value="personal-care">Personal Care</option>
-                <option value="medication">Medication Management</option>
-                <option value="live-in">Live-in Care</option>
-                <option value="companionship">Companionship</option>
-                <option value="dementia">Dementia Care</option>
-                <option value="respite">Respite Care</option>
-                <option value="other">Other / Not Sure</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Tell us about your care needs</label>
-              <textarea id="message" name="message" rows="4" placeholder="Briefly describe the care you're looking for..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              Request Callback
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-            <p class="form-note">We respect your privacy. Your information will never be shared.</p>
-          </form>
-        </div>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com">
+          </div>
+          <div class="form-field">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="personal">Personal Care</option>
+              <option value="medication">Medication Management</option>
+              <option value="livein">Live-in Care</option>
+              <option value="companionship">Companionship</option>
+              <option value="dementia">Dementia Care</option>
+              <option value="respite">Respite Care</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" rows="3" placeholder="Tell us briefly about the care you need..."></textarea>
+          </div>
+          <button type="submit" class="btn-accent btn-full">
+            Request Callback
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <p class="form-note">Your information is safe. We never share your details.</p>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-main">
+      <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="logo">
-            <div class="logo-mark">
-              <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
-                <rect width="40" height="40" rx="10" fill="#2563eb"/>
+          <a href="#" class="nav-logo">
+            <span class="logo-icon">
+              <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+                <rect width="40" height="40" rx="10" fill="#c8a97e"/>
                 <path d="M20 10c-3 0-8 4-8 9s5 11 8 13c3-2 8-8 8-13s-5-9-8-9z" fill="#fff" opacity="0.9"/>
-                <circle cx="20" cy="19" r="3" fill="#2563eb"/>
+                <circle cx="20" cy="19" r="3" fill="#c8a97e"/>
               </svg>
-            </div>
-            <div class="logo-text">
-              <span class="logo-name">TransierCare</span>
-              <span class="logo-tagline">Domiciliary Services</span>
-            </div>
+            </span>
+            TransierCare
           </a>
-          <p>Compassionate, professional domiciliary care to help your loved ones live independently at home with dignity.</p>
+          <p>Professional domiciliary care helping your loved ones live independently at home with dignity and compassion.</p>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#journey">How It Works</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+          <h4>Company</h4>
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#how">How It Works</a>
+          <a href="#stories">Testimonials</a>
+          <a href="#contact">Contact</a>
         </div>
         <div class="footer-col">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#services">Personal Care</a></li>
-            <li><a href="#services">Medication Management</a></li>
-            <li><a href="#services">Live-in Care</a></li>
-            <li><a href="#services">Companionship</a></li>
-            <li><a href="#services">Dementia Care</a></li>
-            <li><a href="#services">Respite Care</a></li>
-          </ul>
+          <h4>Services</h4>
+          <a href="#services">Personal Care</a>
+          <a href="#services">Medication Management</a>
+          <a href="#services">Live-in Care</a>
+          <a href="#services">Companionship</a>
+          <a href="#services">Dementia Care</a>
+          <a href="#services">Respite Care</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <ul>
-            <li><a href="tel:07597865846">07597 865846</a></li>
-            <li><a href="mailto:transiercareltd@gmail.com">transiercareltd@gmail.com</a></li>
-          </ul>
+          <a href="tel:07597865846">07597 865846</a>
+          <a href="mailto:transiercareltd@gmail.com">transiercareltd@gmail.com</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 TransierCare Ltd. All rights reserved.</p>
+        <span>&copy; 2026 TransierCare Ltd. All rights reserved.</span>
         <div class="footer-legal">
           <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="#">Terms</a>
         </div>
       </div>
     </div>
