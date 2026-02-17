@@ -1,31 +1,32 @@
 /* ===== Design Tokens ===== */
+/* Core Brand: Warm Rose (#c4627a) · Calm Teal (#2a9d8f) · Warm Cream (#faf6f0) */
 :root {
-  --dark: #0f2d3d;
-  --dark-800: #163a4f;
-  --dark-700: #1e4a62;
-  --text: #2c4a5a;
-  --text-light: #5a7f8f;
-  --text-muted: #7fa3b3;
-  --cream: #f0f7f9;
-  --cream-dark: #dce9ee;
+  --dark: #1a3142;
+  --dark-800: #1f3a4f;
+  --dark-700: #254a5e;
+  --text: #2c4a56;
+  --text-light: #5a7a86;
+  --text-muted: #7a9aa6;
+  --cream: #faf6f0;
+  --cream-dark: #ede6dc;
   --white: #ffffff;
-  --accent: #e8614d;
-  --accent-dark: #d04a36;
-  --accent-light: rgba(232, 97, 77, 0.1);
-  --pink: #d4637e;
-  --pink-dark: #bf4e69;
-  --pink-light: rgba(212, 99, 126, 0.1);
-  --blue: #6b8db5;
-  --blue-dark: #5578a0;
-  --blue-deeper: #1e3a54;
-  --blue-light: rgba(107, 141, 181, 0.1);
+  --accent: #c4627a;
+  --accent-dark: #a84e64;
+  --accent-light: rgba(196, 98, 122, 0.08);
+  --pink: #c4627a;
+  --pink-dark: #a84e64;
+  --pink-light: rgba(196, 98, 122, 0.1);
+  --blue: #2a9d8f;
+  --blue-dark: #1b7d6d;
+  --blue-deeper: #1a3142;
+  --blue-light: rgba(42, 157, 143, 0.08);
   --sage: #2a9d8f;
   --sage-light: rgba(42, 157, 143, 0.08);
   --radius: 16px;
   --radius-sm: 10px;
   --radius-xs: 6px;
-  --shadow: 0 4px 20px rgba(15, 45, 61, 0.06);
-  --shadow-lg: 0 16px 48px rgba(15, 45, 61, 0.1);
+  --shadow: 0 4px 20px rgba(26, 49, 66, 0.06);
+  --shadow-lg: 0 16px 48px rgba(26, 49, 66, 0.1);
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -70,10 +71,10 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
   padding: 16px 32px; border-radius: 50px; font-weight: 600; font-size: 0.9rem;
   background: var(--pink); color: var(--white); border: none;
   transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-out), background 0.3s var(--ease);
-  box-shadow: 0 4px 16px rgba(212, 99, 126, 0.3);
+  box-shadow: 0 4px 16px rgba(196, 98, 122, 0.3);
   will-change: transform;
 }
-.btn-accent:hover { background: var(--pink-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212, 99, 126, 0.4); }
+.btn-accent:hover { background: var(--pink-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196, 98, 122, 0.4); }
 .btn-accent:active { transform: translateY(0) scale(0.98); transition-duration: 0.1s; }
 
 .btn-glass {
@@ -157,7 +158,7 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(30,58,84,0.5) 0%, rgba(20,50,72,0.65) 50%, rgba(15,42,60,0.85) 100%);
+  background: linear-gradient(180deg, rgba(26,49,66,0.45) 0%, rgba(26,49,66,0.6) 50%, rgba(26,49,66,0.82) 100%);
 }
 .hero-content {
   position: relative; z-index: 1; text-align: center;
@@ -166,13 +167,20 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
 .hero-label {
   display: inline-block; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em;
   color: var(--white); margin-bottom: 24px;
-  background: rgba(212, 99, 126, 0.25); padding: 8px 20px; border-radius: 50px;
-  border: 1px solid rgba(212, 99, 126, 0.35); backdrop-filter: blur(4px);
+  background: rgba(196, 98, 122, 0.2); padding: 8px 20px; border-radius: 50px;
+  border: 1px solid rgba(196, 98, 122, 0.3); backdrop-filter: blur(4px);
 }
 .hero h1 { color: var(--white); margin-bottom: 20px; }
 .hero-sub {
-  font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 40px;
+  font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 20px;
   line-height: 1.7;
+}
+.hero-diff {
+  font-size: 1rem; font-weight: 600; color: rgba(255,255,255,0.9);
+  letter-spacing: 0.01em; margin-bottom: 36px;
+  padding: 10px 24px; display: inline-block;
+  border-left: 3px solid var(--pink); background: rgba(196, 98, 122, 0.12);
+  border-radius: 0 8px 8px 0;
 }
 .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
@@ -294,7 +302,7 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
 .card-link:hover { letter-spacing: 0.04em; }
 
 /* ===== Process / Timeline ===== */
-.process { padding: 120px 0; background: linear-gradient(180deg, #edf2f8 0%, var(--cream) 100%); }
+.process { padding: 120px 0; background: linear-gradient(180deg, #f0ece4 0%, var(--cream) 100%); }
 .timeline {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
   position: relative;
@@ -321,10 +329,10 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
   width: 36px; height: 36px; border-radius: 50%; background: var(--blue);
   color: var(--white); display: flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: 0.85rem; margin: 0 auto 16px;
-  position: relative; z-index: 2; box-shadow: 0 0 0 4px #edf2f8;
+  position: relative; z-index: 2; box-shadow: 0 0 0 4px #f0ece4;
   transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-out);
 }
-.timeline-step:hover .timeline-dot { transform: scale(1.15); box-shadow: 0 0 0 6px #edf2f8, 0 4px 12px rgba(107,141,181,0.3); }
+.timeline-step:hover .timeline-dot { transform: scale(1.15); box-shadow: 0 0 0 6px #f0ece4, 0 4px 12px rgba(107,141,181,0.3); }
 .timeline-step h3 { margin-bottom: 6px; }
 .timeline-step p { color: var(--text-light); font-size: 0.88rem; line-height: 1.55; }
 
@@ -507,7 +515,8 @@ h4 { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 700
   .hero { min-height: 100vh; min-height: 100dvh; }
   .hero-content { padding: 100px 16px 60px; }
   .hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
-  .hero-sub { font-size: 0.95rem; margin-bottom: 28px; line-height: 1.6; }
+  .hero-sub { font-size: 0.95rem; margin-bottom: 16px; line-height: 1.6; }
+  .hero-diff { font-size: 0.88rem; padding: 8px 18px; margin-bottom: 24px; }
   .hero-label { font-size: 0.72rem; letter-spacing: 0.12em; margin-bottom: 20px; }
   .hero-scroll { bottom: 20px; }
   .hero-btns { gap: 10px; }
