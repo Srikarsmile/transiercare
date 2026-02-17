@@ -407,6 +407,17 @@ h4 { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 700; te
 .form-field textarea { resize: vertical; min-height: 80px; }
 .form-note { text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 12px; }
 
+/* ===== Trust Banner ===== */
+.trust-banner {
+  padding: 56px 32px; text-align: center;
+  background: var(--cream);
+}
+.trust-banner p {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 400;
+  color: var(--dark); line-height: 1.4;
+}
+
 /* ===== Footer ===== */
 .footer { background: var(--blue-deeper); color: var(--white); padding: 72px 0 0; }
 .footer-grid {
