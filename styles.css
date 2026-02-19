@@ -139,6 +139,7 @@ h4 { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 700; te
   transform-origin: center;
 }
 .nav.scrolled .nav-toggle span { background: var(--dark); }
+.nav-toggle.active span { background: var(--dark); }
 .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .nav-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
