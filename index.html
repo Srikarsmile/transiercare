@@ -4,36 +4,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TransierCare | Compassionate Home Care</title>
+  <meta name="description"
+    content="Compassionate, consistent home care built around your family. Speak with TransierCare about personal care, companionship, live-in care and more.">
+  <meta name="theme-color" content="#173b3f">
+  <title>TransierCare | Trusted Home Care That Feels Personal</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=DM+Serif+Display:ital@0;1&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500;1,6..72,600&amp;display=swap"
     rel="stylesheet">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- Sticky Nav -->
-  <nav class="nav" id="navbar">
+  <nav class="nav" id="navbar" aria-label="Primary navigation">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">
+      <a href="#home" class="nav-logo" aria-label="TransierCare home">
         <span class="logo-text-mark">Transier</span><span class="logo-text-highlight">Care</span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#how">Process</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="nav-btn">Free Consultation</a></li>
+        <li><a href="tel:07597865846" class="nav-call">07597&nbsp;865846</a></li>
+        <li><a href="#contact" class="nav-btn">Request a callback</a></li>
       </ul>
     </div>
   </nav>
 
+  <main id="main-content" tabindex="-1">
   <!-- ===== HERO: Full-bleed cinematic ===== -->
   <section class="hero" id="home">
     <div class="hero-bg">
@@ -41,31 +47,30 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-label animate-in">Founded with Heart &bull; Built on Trust</p>
-      <h1 class="animate-in d1">Care that feels like<br><span class="serif-italic">family,</span> not a service</h1>
-      <p class="hero-sub animate-in d2">We started TransierCare because we believe everyone deserves compassionate,
-        personalised support in their own home. We&rsquo;ve seen first-hand what thoughtful, respectful care does, not
-        just for the person receiving it, but for the whole family.</p>
-      <p class="hero-diff animate-in d2">The same trusted carer, every visit. That&rsquo;s our promise.</p>
+      <p class="hero-label animate-in">Family-founded home care</p>
+      <h1 class="animate-in d1">Care that feels like <span class="serif-italic">family.</span></h1>
+      <p class="hero-sub animate-in d2">Warm, dependable support that helps your loved one live safely and confidently
+        at home, with a familiar carer who takes the time to know them.</p>
       <div class="hero-btns animate-in d3">
         <a href="#contact" class="btn-accent">
-          Book Free Assessment
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          Request a free assessment
+          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
         <a href="tel:07597865846" class="btn-glass">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path
               d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
           </svg>
-          07597 865846
+          07597&nbsp;865846
         </a>
       </div>
-      <div class="hero-scroll animate-in d4">
-        <div class="scroll-line"></div>
-        <span>Scroll</span>
-      </div>
+      <ul class="hero-trust animate-in d4">
+        <li><span aria-hidden="true">&#10003;</span> Same trusted carer</li>
+        <li><span aria-hidden="true">&#10003;</span> Free home assessment</li>
+        <li><span aria-hidden="true">&#10003;</span> Support shaped around you</li>
+      </ul>
     </div>
   </section>
 
@@ -143,7 +148,7 @@
         <!-- Small cards -->
         <div class="card scroll-in">
           <div class="card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
                 d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z" />
             </svg>
@@ -154,7 +159,7 @@
         </div>
         <div class="card scroll-in">
           <div class="card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
               <circle cx="9" cy="7" r="4" />
               <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
@@ -166,7 +171,7 @@
         </div>
         <div class="card scroll-in">
           <div class="card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
               <polyline points="9 22 9 12 15 12 15 22" />
             </svg>
@@ -177,7 +182,7 @@
         </div>
         <div class="card scroll-in">
           <div class="card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <circle cx="12" cy="12" r="10" />
               <path d="M8 14s1.5 2 4 2 4-2 4-2" />
               <line x1="9" y1="9" x2="9.01" y2="9" />
@@ -190,7 +195,7 @@
         </div>
         <div class="card scroll-in">
           <div class="card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="3" y="4" width="18" height="18" rx="2" />
               <line x1="16" y1="2" x2="16" y2="6" />
               <line x1="8" y1="2" x2="8" y2="6" />
@@ -262,16 +267,16 @@
 
       <div class="contact-quick scroll-in">
         <a href="tel:07597865846" class="contact-link">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
           </svg>
           <div>
-            <strong>07597 865846</strong>
-            <span>Call us anytime</span>
+            <strong>07597&nbsp;865846</strong>
+            <span>Call&nbsp;us&nbsp;anytime</span>
           </div>
         </a>
         <a href="mailto:transiercareltd@gmail.com" class="contact-link">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
             <polyline points="22,6 12,13 2,6" />
           </svg>
@@ -285,23 +290,24 @@
       <div class="contact-form-wrapper scroll-in">
         <form class="contact-form" id="contactForm" action="https://formsubmit.co/transiercareltd@gmail.com" method="POST" autocomplete="on">
           <input type="hidden" name="_subject" value="New Care Enquiry from TransierCare Website">
-          <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <h3>Request a free callback</h3>
           <p>Fill in your details and we&rsquo;ll call you back within 2 hours.</p>
           <div class="form-row">
             <div class="form-field">
               <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" placeholder="John Smith" required>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="John Smith" required>
             </div>
             <div class="form-field">
               <label for="phone">Phone *</label>
-              <input type="tel" id="phone" name="phone" placeholder="07700 900 000" required>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel"
+                placeholder="07700&#160;900&#160;000" required>
             </div>
           </div>
           <div class="form-field">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com">
+            <input type="email" id="email" name="email" autocomplete="email" inputmode="email"
+              placeholder="john@example.com">
           </div>
           <div class="form-row">
             <div class="form-field">
@@ -320,35 +326,38 @@
             <div class="form-field">
               <label for="message">Your message</label>
               <textarea id="message" name="message" rows="3"
-                placeholder="Tell us briefly about the care you need..."></textarea>
+                placeholder="Tell us briefly what support you need. Please do not include medical records."></textarea>
             </div>
           </div>
-          <button type="submit" class="btn-accent btn-full">
+          <button type="submit" class="btn-accent btn-full" aria-describedby="formPrivacy">
             Request Callback
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </button>
-          <p class="form-note">Your information is safe. We never share your details.</p>
+          <p class="form-note" id="formPrivacy"><strong>Privacy note:</strong> FormSubmit sends this enquiry to our
+            team so we can respond. Please avoid sharing medical records or sensitive health details. To ask how we
+            handle or delete your information, <a
+              href="mailto:transiercareltd@gmail.com?subject=Privacy%20and%20data%20request">contact us</a>.</p>
         </form>
       </div>
 
       <div class="contact-trust scroll-in">
         <div class="trust-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
             <polyline points="22 4 12 14.01 9 11.01" />
           </svg>
           Fully Insured
         </div>
         <div class="trust-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
           DBS Checked
         </div>
         <div class="trust-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10" />
             <polyline points="12 6 12 12 16 14" />
           </svg>
@@ -357,13 +366,19 @@
       </div>
     </div>
   </section>
+  </main>
+
+  <nav class="mobile-contact-bar" aria-label="Quick contact">
+    <a href="tel:07597865846" class="mobile-contact-call">Call&nbsp;us</a>
+    <a href="#contact" class="mobile-contact-cta">Request callback</a>
+  </nav>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="nav-logo">
+          <a href="#home" class="nav-logo" aria-label="TransierCare home">
             <span class="logo-text-mark">Transier</span><span class="logo-text-highlight">Care</span>
           </a>
           <p>Family-founded domiciliary care you can trust. Helping your loved ones live independently at home with
@@ -387,15 +402,14 @@
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="tel:07597865846">07597 865846</a>
+          <a href="tel:07597865846">07597&nbsp;865846</a>
           <a href="mailto:transiercareltd@gmail.com">transiercareltd@gmail.com</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 TransierCare Ltd. All rights reserved.</span>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
+          <a href="mailto:transiercareltd@gmail.com?subject=Privacy%20enquiry">Privacy enquiries</a>
         </div>
       </div>
     </div>
