@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, stat } from 'node:fs/promises';
 import test from 'node:test';
 import { JSDOM } from 'jsdom';
 
@@ -35,6 +35,38 @@ function renderSite({ width = 1024, reducedMotion = false } = {}) {
   dom.window.eval(script);
 
   return dom;
+}
+
+async function readJpegDimensions(url) {
+  const image = await readFile(url);
+  assert.equal(image.readUInt16BE(0), 0xffd8, `${url.pathname} should be a JPEG`);
+
+  let offset = 2;
+  while (offset < image.length) {
+    if (image[offset] !== 0xff) {
+      offset += 1;
+      continue;
+    }
+
+    const marker = image[offset + 1];
+    offset += 2;
+    if (marker === 0xd9 || marker === 0xda) break;
+
+    const segmentLength = image.readUInt16BE(offset);
+    const startOfFrameMarkers = new Set([
+      0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf
+    ]);
+    if (startOfFrameMarkers.has(marker)) {
+      return {
+        height: image.readUInt16BE(offset + 3),
+        width: image.readUInt16BE(offset + 5)
+      };
+    }
+
+    offset += segmentLength;
+  }
+
+  throw new Error(`Could not read JPEG dimensions for ${url.pathname}`);
 }
 
 test('keyboard users can skip directly to the main content', () => {
@@ -187,5 +219,48 @@ test('rendered icons resolve to decorative symbols', () => {
     assert.equal(uses.length, 1);
     assert.ok(symbolId?.startsWith('#icon-'));
     assert.ok(document.querySelector(symbolId), `expected ${symbolId} to resolve`);
+  }
+});
+
+test('care photography is optimized and declares responsive layout metadata', async () => {
+  const dom = renderSite();
+  const { document } = dom.window;
+  const images = [...document.querySelectorAll('main img')];
+  const hero = document.querySelector('.hero-bg img');
+  let optimizedImageBytes = 0;
+
+  assert.equal(images.length, 7);
+  assert.equal(hero.getAttribute('fetchpriority'), 'high');
+  assert.equal(hero.hasAttribute('loading'), false);
+
+  for (const image of images) {
+    const picture = image.closest('picture');
+    const source = picture?.querySelector('source[type="image/webp"]');
+    const optimizedSrc = source?.getAttribute('srcset');
+    const fallbackSrc = image.getAttribute('src');
+    const width = Number(image.getAttribute('width'));
+    const height = Number(image.getAttribute('height'));
+
+    assert.ok(picture, 'expected each care image to provide a browser fallback');
+    assert.match(optimizedSrc, /-v2\.webp$/);
+    assert.match(fallbackSrc, /-v2-fallback\.jpg$/);
+    assert.ok(image.getAttribute('alt')?.trim());
+    assert.equal(image.getAttribute('decoding'), 'async');
+    assert.ok(width > 0 && height > 0, `${optimizedSrc} should declare intrinsic dimensions`);
+
+    const optimizedFile = await stat(new URL(`../${optimizedSrc}`, import.meta.url));
+    const fallbackUrl = new URL(`../${fallbackSrc}`, import.meta.url);
+    const fallbackFile = await stat(fallbackUrl);
+    const fallbackDimensions = await readJpegDimensions(fallbackUrl);
+    assert.ok(optimizedFile.size < 200_000, `${optimizedSrc} should remain below 200 KB`);
+    assert.ok(fallbackFile.size > 0, `${fallbackSrc} should resolve`);
+    assert.deepEqual(fallbackDimensions, { width, height });
+    optimizedImageBytes += optimizedFile.size;
+  }
+
+  assert.ok(optimizedImageBytes < 1_000_000, 'optimized care image set should remain below 1 MB');
+
+  for (const image of images.filter(image => image !== hero)) {
+    assert.equal(image.getAttribute('loading'), 'lazy');
   }
 });
