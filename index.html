@@ -12,11 +12,64 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500;1,6..72,600&amp;display=swap"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"
     rel="stylesheet">
 </head>
 
 <body>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="m6 12 4 4 8-8" />
+    </symbol>
+    <symbol id="icon-pill" viewBox="0 0 24 24">
+      <path d="m10.5 20.5-7-7a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7Z" />
+      <path d="m8.5 8.5 7 7" />
+    </symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24">
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3 20v-1a6 6 0 0 1 12 0v1" />
+      <path d="M16 5.2a3 3 0 0 1 0 5.6" />
+      <path d="M18 14a5 5 0 0 1 3 4.6V20" />
+    </symbol>
+    <symbol id="icon-house-heart" viewBox="0 0 24 24">
+      <path d="m3 10 9-7 9 7" />
+      <path d="M5 9v11h14V9" />
+      <path d="M12 18s-3-1.8-3-4a1.8 1.8 0 0 1 3-1.2A1.8 1.8 0 0 1 15 14c0 2.2-3 4-3 4Z" />
+    </symbol>
+    <symbol id="icon-brain" viewBox="0 0 24 24">
+      <path d="M9.5 4.5A3.5 3.5 0 0 0 6 8v.3A3.5 3.5 0 0 0 4 14a3.5 3.5 0 0 0 5.5 4.5" />
+      <path d="M14.5 4.5A3.5 3.5 0 0 1 18 8v.3a3.5 3.5 0 0 1 2 5.7 3.5 3.5 0 0 1-5.5 4.5" />
+      <path d="M9.5 4.5v15M14.5 4.5v15M9.5 9H7.8M14.5 9h1.7M9.5 15H7.8M14.5 15h1.7" />
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M16 3v4M8 3v4M3 10h18" />
+      <path d="m9 15 2 2 4-4" />
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
+    </symbol>
+    <symbol id="icon-badge-check" viewBox="0 0 24 24">
+      <path d="M12 3 9.5 5.2 6.2 5 6 8.3 3.8 11 6 13.7 6.2 17l3.3-.2L12 19l2.5-2.2 3.3.2.2-3.3 2.2-2.7L18 8.3 17.8 5l-3.3.2L12 3Z" />
+      <path d="m9 11 2 2 4-4" />
+    </symbol>
+    <symbol id="icon-shield-check" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+      <path d="m9 12 2 2 4-4" />
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </symbol>
+  </svg>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- Sticky Nav -->
@@ -54,22 +107,21 @@
       <div class="hero-btns animate-in d3">
         <a href="#contact" class="btn-accent">
           Request a free assessment
-          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7" />
+          <svg class="site-icon" aria-hidden="true" focusable="false" width="18" height="18">
+            <use href="#icon-arrow-right"></use>
           </svg>
         </a>
         <a href="tel:07597865846" class="btn-glass">
-          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path
-              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+          <svg class="site-icon" aria-hidden="true" focusable="false" width="18" height="18">
+            <use href="#icon-phone"></use>
           </svg>
           07597&nbsp;865846
         </a>
       </div>
       <ul class="hero-trust animate-in d4">
-        <li><span aria-hidden="true">&#10003;</span> Same trusted carer</li>
-        <li><span aria-hidden="true">&#10003;</span> Free home assessment</li>
-        <li><span aria-hidden="true">&#10003;</span> Support shaped around you</li>
+        <li><span aria-hidden="true"><svg class="site-icon" aria-hidden="true" focusable="false" width="12" height="12"><use href="#icon-check"></use></svg></span> Same trusted carer</li>
+        <li><span aria-hidden="true"><svg class="site-icon" aria-hidden="true" focusable="false" width="12" height="12"><use href="#icon-check"></use></svg></span> Free home assessment</li>
+        <li><span aria-hidden="true"><svg class="site-icon" aria-hidden="true" focusable="false" width="12" height="12"><use href="#icon-check"></use></svg></span> Support shaped around you</li>
       </ul>
     </div>
   </section>
@@ -142,69 +194,83 @@
             <h3>Personal Care</h3>
             <p>Dignified support with bathing, dressing, grooming, and daily routines, always delivered with patience
               and warmth.</p>
-            <a href="#contact" class="card-link">Enquire &rarr;</a>
+            <a href="#contact" class="card-link">Enquire
+              <svg class="site-icon" aria-hidden="true" focusable="false" width="16" height="16">
+                <use href="#icon-arrow-right"></use>
+              </svg>
+            </a>
           </div>
         </div>
         <!-- Small cards -->
         <div class="card scroll-in">
           <div class="card-icon">
-            <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path
-                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z" />
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="32" height="32">
+              <use href="#icon-pill"></use>
             </svg>
           </div>
           <h3>Medication Management</h3>
           <p>Safe prompting and administration keeping health on track.</p>
-          <a href="#contact" class="card-link">Enquire &rarr;</a>
+          <a href="#contact" class="card-link">Enquire
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="16" height="16">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </a>
         </div>
         <div class="card scroll-in">
           <div class="card-icon">
-            <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="32" height="32">
+              <use href="#icon-users"></use>
             </svg>
           </div>
           <h3>Companionship</h3>
           <p>Meaningful company to brighten days and combat isolation.</p>
-          <a href="#contact" class="card-link">Enquire &rarr;</a>
+          <a href="#contact" class="card-link">Enquire
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="16" height="16">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </a>
         </div>
         <div class="card scroll-in">
           <div class="card-icon">
-            <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="32" height="32">
+              <use href="#icon-house-heart"></use>
             </svg>
           </div>
           <h3>Live-in Care</h3>
           <p>A dedicated carer living in your home for round-the-clock support.</p>
-          <a href="#contact" class="card-link">Enquire &rarr;</a>
+          <a href="#contact" class="card-link">Enquire
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="16" height="16">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </a>
         </div>
         <div class="card scroll-in">
           <div class="card-icon">
-            <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-              <line x1="9" y1="9" x2="9.01" y2="9" />
-              <line x1="15" y1="9" x2="15.01" y2="9" />
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="32" height="32">
+              <use href="#icon-brain"></use>
             </svg>
           </div>
           <h3>Dementia Care</h3>
           <p>Specialist support for cognitive conditions with trained professionals.</p>
-          <a href="#contact" class="card-link">Enquire &rarr;</a>
+          <a href="#contact" class="card-link">Enquire
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="16" height="16">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </a>
         </div>
         <div class="card scroll-in">
           <div class="card-icon">
-            <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="3" y="4" width="18" height="18" rx="2" />
-              <line x1="16" y1="2" x2="16" y2="6" />
-              <line x1="8" y1="2" x2="8" y2="6" />
-              <line x1="3" y1="10" x2="21" y2="10" />
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="32" height="32">
+              <use href="#icon-calendar"></use>
             </svg>
           </div>
           <h3>Respite Care</h3>
           <p>Temporary relief for family carers. Take a well-earned break.</p>
-          <a href="#contact" class="card-link">Enquire &rarr;</a>
+          <a href="#contact" class="card-link">Enquire
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="16" height="16">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -267,8 +333,8 @@
 
       <div class="contact-quick scroll-in">
         <a href="tel:07597865846" class="contact-link">
-          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+          <svg class="site-icon" aria-hidden="true" focusable="false" width="22" height="22">
+            <use href="#icon-phone"></use>
           </svg>
           <div>
             <strong>07597&nbsp;865846</strong>
@@ -276,9 +342,8 @@
           </div>
         </a>
         <a href="mailto:transiercareltd@gmail.com" class="contact-link">
-          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-            <polyline points="22,6 12,13 2,6" />
+          <svg class="site-icon" aria-hidden="true" focusable="false" width="22" height="22">
+            <use href="#icon-mail"></use>
           </svg>
           <div>
             <strong>transiercareltd@gmail.com</strong>
@@ -331,8 +396,8 @@
           </div>
           <button type="submit" class="btn-accent btn-full" aria-describedby="formPrivacy">
             Request Callback
-            <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7" />
+            <svg class="site-icon" aria-hidden="true" focusable="false" width="18" height="18">
+              <use href="#icon-arrow-right"></use>
             </svg>
           </button>
           <p class="form-note" id="formPrivacy"><strong>Privacy note:</strong> FormSubmit sends this enquiry to our
@@ -344,22 +409,20 @@
 
       <div class="contact-trust scroll-in">
         <div class="trust-item">
-          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-            <polyline points="22 4 12 14.01 9 11.01" />
+          <svg class="site-icon" aria-hidden="true" focusable="false" width="18" height="18">
+            <use href="#icon-badge-check"></use>
           </svg>
           Fully Insured
         </div>
         <div class="trust-item">
-          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <svg class="site-icon" aria-hidden="true" focusable="false" width="18" height="18">
+            <use href="#icon-shield-check"></use>
           </svg>
           DBS Checked
         </div>
         <div class="trust-item">
-          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
+          <svg class="site-icon" aria-hidden="true" focusable="false" width="18" height="18">
+            <use href="#icon-clock"></use>
           </svg>
           24/7 Support
         </div>

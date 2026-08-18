@@ -169,3 +169,23 @@ test('mobile visitors always have direct call and callback actions', () => {
   assert.ok(bar.querySelector('a[href^="tel:"]'));
   assert.ok(bar.querySelector('a[href="#contact"]'));
 });
+
+test('rendered icons resolve to decorative symbols', () => {
+  const dom = renderSite();
+  const { document } = dom.window;
+  const icons = [...document.querySelectorAll('svg:not(.icon-sprite)')];
+
+  assert.ok(icons.length > 0, 'expected the shared icon system to render icons');
+
+  for (const icon of icons) {
+    const uses = icon.querySelectorAll('use');
+    const use = uses[0];
+    const symbolId = use?.getAttribute('href');
+
+    assert.ok(icon.classList.contains('site-icon'));
+    assert.equal(icon.getAttribute('aria-hidden'), 'true');
+    assert.equal(uses.length, 1);
+    assert.ok(symbolId?.startsWith('#icon-'));
+    assert.ok(document.querySelector(symbolId), `expected ${symbolId} to resolve`);
+  }
+});
