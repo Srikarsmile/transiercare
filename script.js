@@ -19,31 +19,91 @@ window.addEventListener('scroll', () => {
 // ===== Mobile Nav with overlay =====
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
+const mobileMenuBreakpoint = 768;
+const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 // Create overlay element for mobile menu
 const navOverlay = document.createElement('div');
 navOverlay.className = 'nav-overlay';
 document.body.appendChild(navOverlay);
 
+function syncMobileMenuAccessibility(isActive = navLinks.classList.contains('active')) {
+  if (window.innerWidth > mobileMenuBreakpoint) {
+    navLinks.removeAttribute('inert');
+    navLinks.removeAttribute('aria-hidden');
+    return;
+  }
+
+  navLinks.setAttribute('aria-hidden', String(!isActive));
+  if (isActive) navLinks.removeAttribute('inert');
+  else navLinks.setAttribute('inert', '');
+}
+
 function toggleMobileNav() {
   const isActive = navLinks.classList.toggle('active');
-  navToggle.classList.toggle('active');
+  navToggle.classList.toggle('active', isActive);
+  navToggle.setAttribute('aria-expanded', String(isActive));
+  navToggle.setAttribute('aria-label', isActive ? 'Close navigation menu' : 'Open navigation menu');
   navOverlay.classList.toggle('active', isActive);
   document.body.style.overflow = isActive ? 'hidden' : '';
+  syncMobileMenuAccessibility(isActive);
+  if (isActive) {
+    requestAnimationFrame(() => navLinks.querySelector('a')?.focus({ preventScroll: true }));
+  }
 }
 
-function closeMobileNav() {
+function closeMobileNav({ restoreFocus = false } = {}) {
+  const wasActive = navLinks.classList.contains('active');
   navLinks.classList.remove('active');
   navToggle.classList.remove('active');
+  navToggle.setAttribute('aria-expanded', 'false');
+  navToggle.setAttribute('aria-label', 'Open navigation menu');
   navOverlay.classList.remove('active');
   document.body.style.overflow = '';
+  syncMobileMenuAccessibility(false);
+  if (restoreFocus && wasActive) navToggle.focus();
 }
 
+syncMobileMenuAccessibility(false);
+
 navToggle.addEventListener('click', toggleMobileNav);
-navOverlay.addEventListener('click', closeMobileNav);
+navOverlay.addEventListener('click', () => closeMobileNav({ restoreFocus: true }));
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeMobileNav({ restoreFocus: true });
+
+  if (event.key === 'Tab' && navLinks.classList.contains('active')) {
+    const menuLinks = [...navLinks.querySelectorAll('a[href]')];
+    const firstLink = menuLinks[0];
+    const lastLink = menuLinks.at(-1);
+    const activeElement = document.activeElement;
+
+    if (!event.shiftKey && activeElement === lastLink) {
+      event.preventDefault();
+      navToggle.focus();
+    } else if (!event.shiftKey && activeElement === navToggle) {
+      event.preventDefault();
+      firstLink.focus();
+    } else if (event.shiftKey && activeElement === firstLink) {
+      event.preventDefault();
+      navToggle.focus();
+    } else if (event.shiftKey && activeElement === navToggle) {
+      event.preventDefault();
+      lastLink.focus();
+    }
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > mobileMenuBreakpoint) closeMobileNav();
+  else syncMobileMenuAccessibility(navLinks.classList.contains('active'));
+});
 
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', closeMobileNav);
+  link.addEventListener('click', () => {
+    const isPageAnchor = link.getAttribute('href')?.startsWith('#');
+    closeMobileNav({ restoreFocus: !isPageAnchor });
+  });
 });
 
 // ===== Smooth Scroll with easing =====
@@ -57,7 +117,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     closeMobileNav();
     const navHeight = navbar.offsetHeight;
     const targetPos = target.getBoundingClientRect().top + window.scrollY - navHeight;
-    window.scrollTo({ top: targetPos, behavior: 'smooth' });
+    window.scrollTo({ top: targetPos, behavior: reducedMotionQuery.matches ? 'auto' : 'smooth' });
+    if (anchor.classList.contains('skip-link') || anchor.closest('#navLinks')) {
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    }
   });
 });
 
@@ -79,7 +143,7 @@ scrollElements.forEach(el => observer.observe(el));
 const heroBg = document.querySelector('.hero-bg img');
 let heroTicking = false;
 
-if (heroBg) {
+if (heroBg && !reducedMotionQuery.matches) {
   window.addEventListener('scroll', () => {
     if (!heroTicking) {
       requestAnimationFrame(() => {
@@ -95,8 +159,6 @@ if (heroBg) {
     }
   }, { passive: true });
 }
-
-
 // ===== Form Handling =====
 const form = document.getElementById('contactForm');
 
@@ -108,44 +170,4 @@ form.querySelectorAll('input, select, textarea').forEach(field => {
   field.addEventListener('blur', () => {
     field.closest('.form-field').querySelector('label').style.color = '';
   });
-});
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const btn = form.querySelector('button[type="submit"]');
-  const originalHTML = btn.innerHTML;
-
-  btn.innerHTML = `
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 0.6s linear infinite">
-      <path d="M21 12a9 9 0 11-6.219-8.56"/>
-    </svg>
-    Sending...
-  `;
-  btn.disabled = true;
-  btn.style.opacity = '0.7';
-  btn.style.transform = 'scale(0.98)';
-
-  const style = document.createElement('style');
-  style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
-  document.head.appendChild(style);
-
-  setTimeout(() => {
-    btn.style.transform = '';
-    btn.innerHTML = `
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
-      </svg>
-      Request Sent!
-    `;
-    btn.style.background = '#16a34a';
-    btn.style.opacity = '1';
-    form.reset();
-
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-      btn.style.background = '';
-      btn.disabled = false;
-      style.remove();
-    }, 3000);
-  }, 1500);
 });
